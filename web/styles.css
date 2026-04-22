@@ -179,6 +179,78 @@ section.block > p:last-child {
   color: var(--muted);
 }
 
+.section-kicker {
+  margin: 0 0 0.75rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+/* Bloque clicable: planes / tienda (sustituir href en index.html) */
+.store-block {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  padding: clamp(1.1rem, 3vw, 1.5rem);
+  max-width: 36rem;
+  text-decoration: none;
+  color: inherit;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  border-left: 4px solid var(--accent);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.store-block:hover {
+  border-color: var(--accent-deep);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+}
+
+@media (prefers-color-scheme: dark) {
+  .store-block:hover {
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+  }
+}
+
+.store-block:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.store-block__plan {
+  display: block;
+}
+
+.store-block__plan:first-child {
+  padding-bottom: 0.9rem;
+  margin-bottom: 0.15rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.store-block__detail {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.store-block__cta {
+  margin-top: 0.25rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--accent-deep);
+}
+
+@media (prefers-color-scheme: dark) {
+  .store-block__cta {
+    color: var(--accent);
+  }
+}
+
 .block--premium {
   padding: clamp(1.1rem, 3vw, 1.5rem);
   background: var(--surface);
