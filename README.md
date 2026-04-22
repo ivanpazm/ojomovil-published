@@ -6,6 +6,7 @@ Este directorio contiene los documentos legales requeridos para la publicación 
 
 Sitio publicado en GitHub Pages: [https://ivanpazm.github.io/ojomovil-published/web/](https://ivanpazm.github.io/ojomovil-published/web/)
 
+- **web/styles.css** — Estilos compartidos (misma apariencia en todas las páginas)
 - **web/index.html** — Página principal
 - **web/privacy.html** — Política de privacidad
 - **web/terms.html** — Términos de uso
