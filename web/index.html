@@ -83,6 +83,14 @@
     font-size: 0.95rem;
   }
 
+  .download code {
+    font-size: 0.9em;
+    padding: 0.1em 0.35em;
+    border-radius: 4px;
+    background: var(--bg);
+    color: var(--accent);
+  }
+
   .btn-apk {
     display: inline-flex;
     align-items: center;
@@ -223,8 +231,8 @@
 
   <section class="download" aria-labelledby="apk-title">
     <h2 id="apk-title">Descargar APK</h2>
-    <p>Descarga <strong>OjoMovil.apk</strong> (archivo en la misma carpeta que esta página).</p>
-    <a class="btn-apk" href="OjoMovil.apk" download="OjoMovil.apk">Descargar APK</a>
+    <p>Descarga <strong>OjoMovil.apk</strong> desde el repositorio en GitHub (rama <code>main</code>, carpeta <code>web/</code>).</p>
+    <a class="btn-apk" href="https://github.com/ivanpazm/ojomovil-published/raw/main/web/OjoMovil.apk">Descargar APK</a>
   </section>
 
   <section class="block" aria-labelledby="how-title">
@@ -247,12 +255,11 @@
 
 <footer>
   <nav class="footer-inner" aria-label="Enlaces legales y repositorio">
-    <a href="privacy.html">Privacidad</a>
+    <a href="../privacy.html">Privacidad</a>
     <span class="footer-sep" aria-hidden="true">·</span>
-    <a href="terms.html">Términos</a>
+    <a href="../terms.html">Términos</a>
     <span class="footer-sep" aria-hidden="true">·</span>
-    <!-- Sustituye el href por la URL real de tu repositorio en GitHub -->
-    <a href="https://github.com/">GitHub del proyecto</a>
+    <a href="https://github.com/ivanpazm/ojomovil-published">GitHub del proyecto</a>
   </nav>
 </footer>
 
