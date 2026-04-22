@@ -15,26 +15,48 @@
 
 <main>
 
-  <section class="download" aria-labelledby="apk-title">
-    <h2 id="apk-title">Descargar APK</h2>
-    <p>Descarga <strong>OjoMovil.apk</strong> desde el repositorio en GitHub (rama <code>main</code>, carpeta <code>web/</code>).</p>
-    <a class="btn-apk" href="https://github.com/ivanpazm/ojomovil-published/raw/main/web/OjoMovil.apk">Descargar APK</a>
+  <section class="block" aria-labelledby="what-title">
+    <h2 id="what-title">¿Qué es Ojo Móvil?</h2>
+    <p class="lede">Ojo Móvil integra una <strong>skill de Alexa</strong> con una <strong>app Android</strong> para disparar capturas desde el altavoz. El flujo está pensado para que el móvil actúe como cámara en la misma red que el dispositivo Amazon, con emparejamiento explícito y procesamiento orientado al dispositivo.</p>
+    <ul class="icon-bullets" role="list">
+      <li><span class="icon-bullets__emoji" aria-hidden="true">🎙️</span> Disparo por voz con Alexa cuando el Echo y el móvil comparten entorno de red adecuado.</li>
+      <li><span class="icon-bullets__emoji" aria-hidden="true">🔗</span> Vinculación entre la skill y la app mediante <strong>código de emparejamiento</strong> generado en el teléfono.</li>
+      <li><span class="icon-bullets__emoji" aria-hidden="true">📱</span> Las capturas quedan en el almacenamiento local del Android; no hay subida automática de fotos a servidores para el uso básico descrito aquí.</li>
+    </ul>
   </section>
 
   <section class="block" aria-labelledby="how-title">
     <h2 id="how-title">Cómo funciona</h2>
     <ol class="steps">
-      <li>Instala la app en tu móvil Android</li>
-      <li>Conecta tu Alexa</li>
-      <li>Di: “Alexa, abre ojo móvil”</li>
+      <li><strong>Instala la app</strong> <em>Ojo Móvil</em> en un terminal Android compatible (consulta requisitos abajo).</li>
+      <li><strong>Vincula con Alexa</strong> usando el <strong>código</strong> que muestra la app: introdúcelo en el flujo de enlace de la skill en la app Alexa o en el dispositivo Echo, según el asistente te indique.</li>
+      <li><strong>Pide la captura</strong> invocando la skill; por ejemplo: <q>Alexa, captura ahora</q>. Usa la forma de invocación que tengas publicada en la tienda de skills si difiere de este ejemplo.</li>
     </ol>
   </section>
 
-  <section class="block" aria-labelledby="privacy-title">
-    <h2 id="privacy-title">Privacidad</h2>
-    <div class="privacy-box">
-      <p>Las fotos nunca salen de tu móvil. No se envían a servidores externos.</p>
-    </div>
+  <section class="block" aria-labelledby="advantages-title">
+    <h2 id="advantages-title">Ventajas</h2>
+    <ul class="plain-list">
+      <li>Manos libres: dispara sin abrir la app en el momento de la toma.</li>
+      <li>Emparejamiento claro entre cuenta Alexa y un único móvil autorizado mediante código.</li>
+      <li>Arquitectura pensada para minimizar datos personales en tránsito en el flujo principal de captura.</li>
+      <li>Base técnica preparada para evolucionar (skill + app + servicios cuando apliquen).</li>
+    </ul>
+  </section>
+
+  <section class="block" aria-labelledby="compat-title">
+    <h2 id="compat-title">Compatibilidad</h2>
+    <ul class="spec-list">
+      <li><span class="spec-list__label">Sistema</span> Android 8.0 (API 26) o superior en el teléfono donde instales el APK.</li>
+      <li><span class="spec-list__label">Alexa</span> Skill de Alexa compatible y dispositivo Echo (o equivalente) en la misma cuenta y red que permita el enlace con la app.</li>
+      <li><span class="spec-list__label">Backend</span> Donde la implementación lo use, servicios apoyados en <strong>Supabase</strong> (por ejemplo autenticación o datos de configuración); el uso concreto depende de la versión publicada de la skill y la app.</li>
+    </ul>
+  </section>
+
+  <section class="download download--final" aria-labelledby="apk-title">
+    <h2 id="apk-title">Descargar APK</h2>
+    <p>Paquete <strong>OjoMovil.apk</strong> desde el repositorio en GitHub (rama <code>main</code>, carpeta <code>web/</code>).</p>
+    <a class="btn-apk btn-apk--large" href="https://github.com/ivanpazm/ojomovil-published/raw/main/web/OjoMovil.apk">Descargar APK</a>
   </section>
 
 </main>

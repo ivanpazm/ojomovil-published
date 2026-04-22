@@ -42,7 +42,8 @@ body {
   min-height: 100vh;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
   font-size: 1.0625rem;
-  line-height: 1.55;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
   color: var(--text);
   background: var(--bg);
   display: flex;
@@ -55,7 +56,8 @@ main {
   max-width: calc(var(--max) + var(--space) * 2);
   margin: 0 auto;
   padding: var(--space);
-  padding-bottom: 3rem;
+  padding-top: clamp(1.25rem, 4vw, 2rem);
+  padding-bottom: clamp(2.5rem, 6vw, 4rem);
 }
 
 header {
@@ -81,6 +83,12 @@ header h1 a:hover {
   color: var(--accent);
 }
 
+header h1 a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
 header p {
   margin: 0;
   color: var(--muted);
@@ -96,11 +104,23 @@ header p {
   text-align: center;
 }
 
+.download--final {
+  margin-top: clamp(2.25rem, 6vw, 3.5rem);
+  padding: clamp(1.75rem, 5vw, 2.75rem) clamp(1.25rem, 4vw, 2rem);
+  border-color: var(--accent-deep);
+  box-shadow: 0 1px 0 rgba(45, 212, 191, 0.08);
+}
+
 .download h2 {
   margin: 0 0 0.75rem;
   font-size: clamp(1.35rem, 4vw, 1.75rem);
   font-weight: 700;
   letter-spacing: -0.02em;
+}
+
+.download--final h2 {
+  margin-bottom: 0.65rem;
+  font-size: clamp(1.45rem, 4.5vw, 1.95rem);
 }
 
 .download p {
@@ -147,14 +167,138 @@ header p {
   transform: scale(0.98);
 }
 
+.btn-apk:focus-visible {
+  outline: 2px solid var(--accent-hover);
+  outline-offset: 3px;
+}
+
+footer a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.btn-apk--large {
+  margin-top: 0.35rem;
+  padding: 1.2rem 2.1rem;
+  font-size: clamp(1.1rem, 3.5vw, 1.25rem);
+  width: 100%;
+  max-width: 22rem;
+}
+
+@media (min-width: 30rem) {
+  .btn-apk--large {
+    width: auto;
+    min-width: 14rem;
+  }
+}
+
 section.block {
-  margin-top: clamp(1.75rem, 5vw, 2.5rem);
+  margin-top: clamp(2rem, 5.5vw, 3.25rem);
+}
+
+main > section.block:first-of-type {
+  margin-top: 0;
 }
 
 section.block h2 {
   margin: 0 0 1rem;
-  font-size: 1.15rem;
+  font-size: clamp(1.12rem, 2.8vw, 1.28rem);
   font-weight: 600;
+  letter-spacing: -0.015em;
+  color: var(--text);
+}
+
+.lede {
+  margin: 0 0 1.35rem;
+  max-width: 65ch;
+  color: var(--text);
+  font-size: 1.03rem;
+  line-height: 1.65;
+}
+
+.icon-bullets {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.icon-bullets li {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  margin: 0;
+  padding: 0.95rem 1.05rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  line-height: 1.55;
+}
+
+.icon-bullets__emoji {
+  flex-shrink: 0;
+  font-size: 1.35rem;
+  line-height: 1.35;
+}
+
+.plain-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.plain-list li {
+  margin: 0 0 0.55rem;
+  padding: 0.65rem 0.85rem 0.65rem 1rem;
+  border-left: 3px solid var(--accent);
+  background: var(--surface);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  border-top: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  line-height: 1.55;
+}
+
+.plain-list li:last-child {
+  margin-bottom: 0;
+}
+
+.spec-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.spec-list li {
+  margin: 0 0 1rem;
+  padding: 0.85rem 1.05rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  line-height: 1.55;
+}
+
+.spec-list li:last-child {
+  margin-bottom: 0;
+}
+
+.spec-list__label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent-deep);
+}
+
+@media (prefers-color-scheme: dark) {
+  .spec-list__label {
+    color: var(--accent-strong);
+  }
 }
 
 .steps {
@@ -166,12 +310,13 @@ section.block h2 {
 
 .steps li {
   position: relative;
-  padding: 1rem 1rem 1rem 3.25rem;
+  padding: 1.05rem 1rem 1.05rem 3.35rem;
   margin-bottom: 0.75rem;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   counter-increment: step;
+  line-height: 1.55;
 }
 
 .steps li:last-child { margin-bottom: 0; }
