@@ -94,20 +94,23 @@
     <p>Requieren Ollama configurado (gratuito) y una licencia Premium o Founder (muy barata).</p>
   </section>
 
-  <!-- Sustituye el href por la URL de tu pasarela (Stripe, Lemon Squeezy, etc.) cuando la tengas. -->
-  <section class="block" aria-labelledby="plans-title">
+  <!-- Sustituye cada href por la URL de pago del plan (Stripe, Lemon Squeezy, etc.). -->
+  <section class="block plans-section" aria-labelledby="plans-title">
     <h2 id="plans-title">Planes disponibles</h2>
-    <a class="store-block" href="https://github.com/ivanpazm/ojomovil-published/releases">
-      <span class="store-block__plan">
-        <strong>Premium 1 año</strong>
-        <span class="store-block__detail">Acceso a todas las funciones con IA durante 12 meses. Pago único.</span>
-      </span>
-      <span class="store-block__plan">
-        <strong>Founder (de por vida)</strong>
-        <span class="store-block__detail">Pago único. Acceso permanente a todas las funciones actuales y futuras.</span>
-      </span>
-      <span class="store-block__cta">Ir a la tienda →</span>
-    </a>
+    <div class="plans-grid">
+      <a class="plan-card" href="https://github.com/ivanpazm/ojomovil-published/releases">
+        <span class="plan-card__label">Pago único</span>
+        <h3 class="plan-card__title">Premium 1 año</h3>
+        <p class="plan-card__desc">Acceso a todas las funciones con IA durante 12 meses.</p>
+        <span class="plan-card__cta">Elegir Premium →</span>
+      </a>
+      <a class="plan-card" href="https://github.com/ivanpazm/ojomovil-published/releases">
+        <span class="plan-card__label">Pago único</span>
+        <h3 class="plan-card__title">Founder <span class="plan-card__subtitle">de por vida</span></h3>
+        <p class="plan-card__desc">Acceso permanente a todas las funciones actuales y futuras.</p>
+        <span class="plan-card__cta">Elegir Founder →</span>
+      </a>
+    </div>
   </section>
 
   <section class="block" aria-labelledby="compat-title">

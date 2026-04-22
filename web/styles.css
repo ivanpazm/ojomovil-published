@@ -186,67 +186,104 @@ section.block > p:last-child {
   color: var(--muted);
 }
 
-/* Bloque clicable: planes / tienda (sustituir href en index.html) */
-.store-block {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin-top: 0.5rem;
-  padding: clamp(1.1rem, 3vw, 1.5rem);
-  max-width: 36rem;
-  text-decoration: none;
-  color: inherit;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  border-left: 4px solid var(--accent);
-  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+/* Planes: dos tarjetas iguales, centradas */
+.plans-section .plans-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1rem, 3vw, 1.35rem);
+  max-width: 44rem;
+  margin: 0.75rem auto 0;
+  width: 100%;
 }
 
-.store-block:hover {
-  border-color: var(--accent-deep);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
-}
-
-@media (prefers-color-scheme: dark) {
-  .store-block:hover {
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+@media (max-width: 36rem) {
+  .plans-section .plans-grid {
+    grid-template-columns: 1fr;
+    max-width: 22rem;
   }
 }
 
-.store-block:focus-visible {
+.plan-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 15.5rem;
+  padding: clamp(1.15rem, 3vw, 1.5rem);
+  text-decoration: none;
+  color: inherit;
+  text-align: center;
+  align-items: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 1px 0 rgba(45, 212, 191, 0.06);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.plan-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.14);
+  transform: translateY(-2px);
+}
+
+@media (prefers-color-scheme: dark) {
+  .plan-card:hover {
+    box-shadow: 0 10px 32px rgba(0, 0, 0, 0.35);
+  }
+}
+
+.plan-card:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 3px;
 }
 
-.store-block__plan {
-  display: block;
+.plan-card__label {
+  display: inline-block;
+  margin-bottom: 0.65rem;
+  padding: 0.2rem 0.55rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--on-accent);
+  background: var(--accent);
+  border-radius: 999px;
 }
 
-.store-block__plan:first-child {
-  padding-bottom: 0.9rem;
-  margin-bottom: 0.15rem;
-  border-bottom: 1px solid var(--border);
+.plan-card__title {
+  margin: 0 0 0.65rem;
+  font-size: clamp(1.15rem, 3.5vw, 1.35rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  color: var(--text);
 }
 
-.store-block__detail {
+.plan-card__subtitle {
   display: block;
-  margin-top: 0.35rem;
-  font-size: 0.95rem;
-  font-weight: 400;
+  margin-top: 0.2rem;
+  font-size: 0.82em;
+  font-weight: 600;
   color: var(--muted);
-  line-height: 1.5;
 }
 
-.store-block__cta {
-  margin-top: 0.25rem;
-  font-size: 0.95rem;
+.plan-card__desc {
+  flex: 1;
+  margin: 0 0 1rem;
+  max-width: 17rem;
+  font-size: 0.94rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.plan-card__cta {
+  margin-top: auto;
+  font-size: 0.92rem;
   font-weight: 700;
   color: var(--accent-deep);
 }
 
 @media (prefers-color-scheme: dark) {
-  .store-block__cta {
+  .plan-card__cta {
     color: var(--accent);
   }
 }
